@@ -20,7 +20,7 @@
 
 			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php moesia_posted_on(); ?>
+				<?php ?>
 			</div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
@@ -38,7 +38,7 @@
 				<?php
 					/* translators: used between list items, there is a space after the comma */
 					$categories_list = get_the_category_list( __( ', ', 'moesia' ) );
-					if ( $categories_list && moesia_categorized_blog() ) :
+					if ( $categories_list ) :
 				?>
 				<span class="cat-links">
 					<?php echo '<i class="fa fa-folder"></i>&nbsp;' . $categories_list; ?>
