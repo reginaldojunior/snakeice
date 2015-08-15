@@ -50,7 +50,7 @@
       <div class="container">
         <div class="logo-menu">
             <div class="logo">
-                <h1 style="margin-top: 0px;"><a href="#">Winners</a></h1>
+                <h1 style="margin-top: 0px;"><a href="/blog">Winners</a></h1>
               </div>
                 <!--<a id="simple-menu" href="#sidr">Toggle menu</a>-->
                 <div id="mobile-header">
@@ -58,12 +58,10 @@
                 </div>
               <div class="menu" id="navigation">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#features">Produtos</a></li>
-                    <li><a href="#stories">Métodos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                    <li><a href="/home/login">Login</a></li>
-                    <li><a target="_blank" href="/blog">Blog</a></li>
+                    <?php foreach (get_categories() as $i => $categoria): ?>
+                      <?php $category_link = get_category_link($categoria->cat_ID);?>
+                      <li><a href="<?php echo $category_link; ?>"><?php echo $categoria->name ?></a></li>
+                    <?php endforeach; ?>
                 </ul>
               </div>
           </div>

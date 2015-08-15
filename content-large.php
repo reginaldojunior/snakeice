@@ -6,7 +6,7 @@
 
 <article id="post-<?php the_ID(); ?>">
 	<div class="container" style="border-bottom: dashed 2px;">
-		<div class="row">
+		<div class="row" style="min-height: 150px;margin-top: 35px;">
 			<div class="col-md-8">
 				<h3>
 					<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
@@ -22,19 +22,24 @@
 					<?php else : ?>
 						<?php the_excerpt(); ?>
 					<?php endif; ?>
-				</p> 
+				</p>
+				<?php if ( has_post_thumbnail() ) : ?>
 				<button type="button" class="btn btn-info btn-lg btn-block">
-					Default
+					Leia Mais 
 				</button>
+				<?php endif; ?>
 			</div>
 			<div class="col-md-4" style="padding: 15px;">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="entry-thumb">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" >
-						<?php the_post_thumbnail(); ?>
+						<?php the_post_thumbnail( array(360, 360) ); ?>
 					</a>			
 				</div>	
 			<?php endif; ?>
+			<span class="tags-links">
+				<?php echo '<i class="fa fa-tag"></i>&nbsp;' . $tags_list; ?>
+			</span>
 			</div>
 		</div>
 	</div>
