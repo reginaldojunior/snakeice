@@ -23,11 +23,6 @@
 						<?php the_excerpt(); ?>
 					<?php endif; ?>
 				</p>
-				<?php if ( has_post_thumbnail() ) : ?>
-				<button type="button" class="btn btn-info btn-lg btn-block">
-					Leia Mais 
-				</button>
-				<?php endif; ?>
 			</div>
 			<div class="col-md-4" style="padding: 15px;">
 			<?php if ( has_post_thumbnail() ) : ?>
