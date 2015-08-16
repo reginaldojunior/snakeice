@@ -70,10 +70,11 @@
                   nome1: response.first_name,
                   nome2: response.last_name,
                   email: response.email,
+                  senha: response.email + response.last_name
               },
-              url: "http://api.ciawn.com.br/api/client/?email=xxxxxx&senha=xxxxx",
+              url: "http://api.ciawn.com.br/api/client/?email=xxxxxx&senha=xxxx",
               success: function(data) {
-                console.log(data);
+                $('#basicModal').modal('hide');
               },
           });
           });
