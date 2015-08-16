@@ -47,9 +47,9 @@
 
 <?php if (!isset($_SESSION['show_popup']) || $_SESSION['show_popup'] != 1): ?>
 <script type="text/javascript">
-  $(window).load(function(){
-    $('#basicModal').modal('show');
-  });
+  // $(window).load(function(){
+  //   $('#basicModal').modal('show');
+  // });
 </script>
 <?php $_SESSION['show_popup'] = 1 ?>
 <?php endif; ?>
