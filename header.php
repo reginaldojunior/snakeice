@@ -54,6 +54,7 @@
 <?php $_SESSION['show_popup'] = 1 ?>
 <?php endif; ?>
 
+<link rel='shortcut icon' type='image/x-icon' href='/app/webroot/images/favicon.ico' />
 </head>
 
 <body>
