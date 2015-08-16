@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html>
 <head>
@@ -8,6 +9,7 @@
 
 <link href='http://fonts.googleapis.com/css?family=Raleway:400,200,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300,200' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css">
 
 <link rel="stylesheet" type="text/css" href="<?php echo bloginfo('stylesheet_url') ?>">
 
@@ -43,12 +45,39 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
+<?php if (!isset($_SESSION['show_popup']) || $_SESSION['show_popup'] != 1): ?>
+<script type="text/javascript">
+  $(window).load(function(){
+    $('#basicModal').modal('show');
+  });
+</script>
+<?php $_SESSION['show_popup'] = 1 ?>
+<?php endif; ?>
+
 </head>
 
 <body>
-  <a href="https://github.com/reginaldojunior/snakeice" target="_blank"><img style="position: fixed; top: 80px; right: 0; border: 0;z-index: 2;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+  <a href="https://github.com/reginaldojunior/snakeice" target="_blank">
+    <img 
+      style="position: fixed; top: 80px; right: 0; border: 0;z-index: 2;"
+      src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+      alt="Fork me on GitHub"
+      data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+  </a>
 
-
+  <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Cadastre-se e fique por dentro das novidades e com desconto exclusivos dos nossos parceiros</h4>
+        </div>
+        <div class="modal-body">
+          <a class="btn btn-block btn-social btn-facebook" onclick="facebookCadastro()"><i class="fa fa-facebook"></i>Cadastro com o Facebook</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="header">
       <div class="container">

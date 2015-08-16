@@ -32,9 +32,6 @@
 					</a>			
 				</div>	
 			<?php endif; ?>
-			<span class="tags-links">
-				<?php echo '<i class="fa fa-tag"></i>&nbsp;' . $tags_list; ?>
-			</span>
 			</div>
 		</div>
 	</div>
