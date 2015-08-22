@@ -110,6 +110,16 @@
           </a>
         </div>
         <div class="modal-footer">
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- Postagem única - 1 (dispositivos móveis, winnersdesenvolvimento.com.br) -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-7152383115170558"
+               data-ad-slot="3262625313"
+               data-ad-format="auto"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
           <!-- LOMADEE - BEGIN -->
           <script type="text/javascript" language="javascript">
             lmd_source="32418817";
