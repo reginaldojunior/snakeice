@@ -90,7 +90,7 @@
         <div class="modal-body" style="max-height: 500px;overflow-x: auto;">
           <div class="row">
             <div class="col-md-8 form-group" style="padding-left: 50px;">
-              <input type="text" class="form-control" placeholder="Search" id="txt-livros">
+              <input type="text" class="form-control" placeholder="Digite palavras chaves, php, develop, php develop, python etc..." id="txt-livros">
             </div>
             <a href="javascript:;" class="col-md-3 btn btn-default btn-buscar-livros">Buscar</a>
           </div>
@@ -108,6 +108,19 @@
           <a href="javascript:;" class="btn btn-info mais-resultados" page="1">
             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
           </a>
+        </div>
+        <div class="modal-footer">
+          <!-- LOMADEE - BEGIN -->
+          <script type="text/javascript" language="javascript">
+            lmd_source="32418817";
+            lmd_si="33829858";
+            lmd_pu="22702089";
+            lmd_c="BR";
+            lmd_wi="468";
+            lmd_he="60";
+          </script>
+          <script src="http://image.lomadee.com/js/ad_lomadee.js" type="text/javascript" language="javascript"></script>
+          <!-- LOMADEE - END -->
         </div>
       </div>
     </div>
