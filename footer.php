@@ -76,9 +76,84 @@
               success: function(data) {
                 $('#basicModal').modal('hide');
               },
-          });
+            });
           });
         }
+
+        function ebooksTiOpen() {
+          $('#livroModal').modal('show');
+        }
+
+        function showModalDownload(id) {
+          $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://it-ebooks-api.info/v1/book/" + id,
+            success: function(data) {
+              $('#img-ebook').html('<img src="' + data['Image'] + '" width="80" height="80"/>');
+              $('#name').html(data['Title']);
+              $('#link-download').html('<a href="' + data['Download'] + '" target="_blank">Download</a>');
+
+              $('#modalDownload').modal('show');
+            },
+          });
+        }
+
+        $('.btn-buscar-livros').click(function(){
+          var tags = $('#txt-livros').val()
+            , html = ''
+          ;
+
+          $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://it-ebooks-api.info/v1/search/" + tags,
+            success: function(data) {
+              $.each(data['Books'], function(i, item) {
+                html += '<tr>';
+                html +=   '<td><img src="' + item['Image'] + '" width="80" height="80"/></td>';
+                html +=   '<td>' + item['Title'] + '</td>';
+                if (item['SubTitle'] == undefined){
+                  html +=   '<td> Não disponivel descrição </td>';
+                } else {
+                  html +=   '<td>' + item['SubTitle'] + '</td>';
+                }
+                html +=   '<td><a id="' + item['ID'] + '" class="btn btn-default" href="javascript:;" onclick="showModalDownload('+ item['ID'] +');" role="button"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></td>';
+                html += '</tr>';
+              });
+              
+              $('#livros').html(html);
+            },
+          });
+        });
+
+        $('.mais-resultados').click(function(){
+          var tags = $('#txt-livros').val()
+            , html = ''
+            , page = $(this).attr('page');
+          ;
+
+          page = parseInt(page) + 1;
+          $(this).attr('page', page);
+
+          $.ajax({
+            type: "GET",
+            dataType: "json",
+            url: "http://it-ebooks-api.info/v1/search/" + tags + "/page/" + page ,
+            success: function(data) {
+              $.each(data['Books'], function(i, item) {
+                html += '<tr>';
+                html +=   '<td><img src="' + item['Image'] + '" width="80" height="80"/></td>';
+                html +=   '<td>' + item['Title'] + '</td>';
+                html +=   '<td>' + item['SubTitle'] + '</td>';
+                html +=   '<td><a id="' + item['ID'] + '" class="btn btn-default" href="javascript:;" onclick="showModalDownload('+ item['ID'] +');" role="button"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></td>';
+                html += '</tr>';
+              });
+              
+              $('#livros').append(html);
+            },
+          });
+        });
     </script>
 
 </body>

@@ -80,6 +80,61 @@
     </div>
   </div>
 
+  <div class="modal fade" id="livroModal" tabindex="-1" role="dialog" aria-labelledby="livroModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Encontre diversos Livros de TI</h4>
+        </div>
+        <div class="modal-body" style="max-height: 500px;overflow-x: auto;">
+          <div class="row">
+            <div class="col-md-8 form-group" style="padding-left: 50px;">
+              <input type="text" class="form-control" placeholder="Search" id="txt-livros">
+            </div>
+            <a href="javascript:;" class="col-md-3 btn btn-default btn-buscar-livros">Buscar</a>
+          </div>
+          <hr/>
+          <table class="table table-bordered">
+            <thead>
+              <th>Imagem</th>
+              <th>Titulo</th>
+              <th>Descrição</th>
+              <th>Download</th>
+            </thead>
+            <tbody id="livros">
+            </tbody>
+          </table>
+          <a href="javascript:;" class="btn btn-info mais-resultados" page="1">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modalDownload" tabindex="-1" role="dialog" aria-labelledby="modalDownload" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Baixe o Livro <span id="name"></span></h4>
+        </div>
+        <div class="modal-body" style="max-height: 500px;overflow-x: auto;">
+          <div class="row">
+            <div class="col-md-6 col-xs-12" id="img-ebook">
+
+            </div>
+            <div class="col-md-6 col-xs-12" id="link-download">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class="header">
       <div class="container">
         <div class="logo-menu">
@@ -96,6 +151,7 @@
                       <?php $category_link = get_category_link($categoria->cat_ID);?>
                       <li><a href="<?php echo $category_link; ?>"><?php echo $categoria->name ?></a></li>
                     <?php endforeach; ?>
+                    <li><a href="javascript:;" title="Livros de TI FREE" onclick="ebooksTiOpen()">Livros de TI</a></li>
                 </ul>
               </div>
           </div>
