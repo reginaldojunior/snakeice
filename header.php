@@ -174,7 +174,7 @@
                       <?php $category_link = get_category_link($categoria->cat_ID);?>
                       <li><a href="<?php echo $category_link; ?>"><?php echo $categoria->name ?></a></li>
                     <?php endforeach; ?>
-                    <li><a href="javascript:;" title="Livros de TI FREE" onclick="ebooksTiOpen()">Livros de TI</a></li>
+                    <!-- <li><a href="javascript:;" title="Livros de TI FREE" onclick="ebooksTiOpen()">Livros de TI</a></li> -->
                 </ul>
               </div>
           </div>
