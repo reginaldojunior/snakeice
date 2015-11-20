@@ -55,7 +55,10 @@
 <?php endif; ?>
 
 <link rel='shortcut icon' type='image/x-icon' href='/app/webroot/images/favicon.ico' />
+    
 </head>
+
+<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
 
 <body>
   <a href="https://github.com/reginaldojunior/snakeice" target="_blank">
